@@ -66,7 +66,7 @@ angular.module('lulaApp.controllers', [])
 .controller('CardsCtrl', function($scope, $ionicSwipeCardDelegate) {
   var cardTypes = [];
 	
-  for(i=0; i<17; i++)
+  for(i=0; i<21; i++)
 	  cardTypes.push({ title: 'Soy un salchi', image: '../img/salchi('+ i +').jpg' });
  
 
@@ -106,7 +106,7 @@ angular.module('lulaApp.controllers', [])
  
   // Called to navigate to the main app
   $scope.startApp = function() {
-    $state.go('main');
+    $state.go('tab.compose');
   };
   $scope.next = function() {
     $ionicSlideBoxDelegate.next();

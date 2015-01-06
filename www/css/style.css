@@ -148,12 +148,25 @@
 }
 .slider-slide {
   padding-top: 80px;
-  color: #000;
-  background-color: white;
   text-align: center;
-
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
+}
+
+.slide-1 {
+	background-color: black;
+}
+
+.slide-2 {
+	background-color: #886aea;
+}
+
+.slide-2 h1, .slide-2 h2, .slide-2 h3, .slide-2 h4,  .slide-2 p {
+	color: #E0E0E0;
+}
+
+.slide-1 h2, .slide-1 p {
+	color: #E0E0E0;
 }
 
 #logo {
@@ -163,31 +176,38 @@
 #list {
   width: 170px;
   margin: 30px auto;
-  font-size: 20px;
+  font-size: 16px;
 }
 #list ol {
   margin-top: 30px;
+	
 }
 #list ol li {
   text-align: left;
   list-style: decimal;
   margin: 10px 0px;
+  color: #E0E0E0;
 }
 
 .button.ng-hide{
   display:none;
 }
 
-.intro-image-1{
-	position : absolute;
-	left: 0;
-	bottom : 0;
-	right: 0;
-	top: 0;
-	background-position: bottom;
-	background-image: url('../img/salchi_black.jpg');
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-color: black;
+#image_1 {
+	max-width:100%;
+	max-height:100%;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+}
+
+#image_2 {
+	max-width:60%;
+	max-height:60;
+	border-radius: 10px;
+	border-style:solid;
+	border-color: purple;
+	border-width: thin;
 	
 }
+

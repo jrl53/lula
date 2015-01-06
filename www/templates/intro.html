@@ -2,35 +2,81 @@
         <ion-nav-buttons side="left">
           <button class="button button-positive button-clear no-animation"
                   ng-click="startApp()" ng-show="!slideIndex">
-            Skip Intro
+            Salir
           </button>
           <button class="button button-positive button-clear no-animation"
                   ng-click="previous()" ng-show="slideIndex > 0">
-            Previous Slide
+            <
           </button>
         </ion-nav-buttons>
         <ion-nav-buttons side="right"> 
           <button class="button button-positive button-clear no-animation"
-                  ng-click="next()" ng-show="slideIndex != 2">
-            Next
+                  ng-click="next()" ng-show="slideIndex != 5">
+            >
           </button>
           <button class="button button-positive button-clear no-animation"
-                  ng-click="startApp()" ng-show="slideIndex == 2">
-            Start using MyApp
+                  ng-click="startApp()" ng-show="slideIndex == 5">
+            Ok
           </button>
         </ion-nav-buttons>
         <ion-slide-box on-slide-changed="slideChanged(index)">
        
-          <ion-slide>
-           <div class="intro-image-1">
-			 
-			</div>
+          <ion-slide class="slide-1">
+			
+			  <h2>Hola! Soy Lulaa!</h2>
+				<p >..bueno, una modelo que se farece a mi..</p>
+           
+			<img id = "image_1" src='../img/salchi_black.jpg' /> 
+			
           </ion-slide>
-          <ion-slide>
-            <h3>Any questions?</h3>
+          <ion-slide class="slide-2">
+            <h3>Y hoy es el cumfle de mi hermanaaaa Tutti!</h3>
+			  <img id = "image_2" src='../img/tutti_lula4.jpg' />
             <p>
-              Too bad!
+              ..esa si soy yo...
             </p>
           </ion-slide>
+			
+			 <ion-slide class="slide-2">
+            <h3>Si le quiere mandar un mensajitho lo puede hacer en mi red social...</h3>
+			  
+            <p>
+            </p>
+          </ion-slide>
+			
+			 </ion-slide>
+			
+			 <ion-slide class="slide-2">
+            <h2>La Fared de LULA!!!</h2>
+			  <img id = "image_2" src='../img/screenshot.png' />
+           
+          </ion-slide>
+	
+	</ion-slide>
+			
+			 <ion-slide class="slide-2">
+          
+				 
+				 <div id="list">
+              <h4>Reglas:</h4>
+              <ol>
+                <li>Solo yo fuedo fosthear</li>
+                <li>Yo le fuedo mandar el recado de farte suya</li>
+                <li>Pero lo thraduzco a mi maneraaaa!</li>
+				  <li><b>Thodo</b> fost debe thener una fotho de un salchi!</li>
+              </ol>
+            </div>
+				 <img id = "image_2" src='../img/lula_ojos_blancos.JPG' />
+            
+          </ion-slide>
+
+		<ion-slide class="slide-1">
+			
+			  <button class="button button-royal" ng-click="startApp()">Emfezar!</button>
+           
+			<img id = "image_1" src='../img/salchi_black.jpg' /> 
+			
+          </ion-slide>
+			
         </ion-slide-box>
       </ion-view>

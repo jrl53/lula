@@ -23,7 +23,7 @@ angular.module('lulaApp', ['ionic', 'lulaApp.controllers', 'lulaApp.services', '
 
 .constant("fbURL", "https://lulasfeak.firebaseio.com/")
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -68,7 +68,7 @@ angular.module('lulaApp', ['ionic', 'lulaApp.controllers', 'lulaApp.services', '
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
-
+  $ionicConfigProvider.tabs.position('top');
 })
 
 .directive('noScroll', function($document) {

@@ -10,7 +10,7 @@
   </div>
 
   <div class="item item-body tutti-color-light">  
-	  <p><b>{{message.user}} </b> tthhe manda a deciiiir:</p>
+	  <p ng-if="message.user"><b>{{message.user}} </b> tthhe manda a deciiiir:</p>
 	  <p><span class="assertive">"{{message.mainMessage}}"</span></p>
 	  <img class="half-image" ng-src="{{message.mainImg}}" ng-if="message.mainImg!='none'">
 	 
