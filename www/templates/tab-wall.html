@@ -1,0 +1,24 @@
+<ion-view view-title="La Fared de Lula">
+  <ion-content>
+	  
+   <div class="list card" ng-repeat="message in messages | orderBy: 'time' : true">
+
+  <div class="item item-avatar tutti-color">
+    <img src="../img/salchi%20(16).jpg">
+    <h2>Lula Maria</h2>
+    <p>{{message.timeString}}</p>
+  </div>
+
+  <div class="item item-body tutti-color-light">  
+	  <p><b>{{message.user}} </b> tthhe manda a deciiiir:</p>
+	  <p><span class="assertive">"{{message.mainMessage}}"</span></p>
+	  <img class="half-image" ng-src="{{message.mainImg}}">
+	 
+  </div>
+	
+ </div>
+	  
+
+
+  </ion-content>
+</ion-view>

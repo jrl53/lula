@@ -1,0 +1,36 @@
+<ion-view view-title="Nuevo Mensaje">
+  <ion-content>
+    <div class="list card">
+
+  <div class="item item-avatar tutti-color">
+    <img src="../img/salchi%20(16).jpg">
+    <h2>Lula Maria</h2>
+    <p>{{message.timeString}}</p>
+  </div>
+
+  <div class="item item-body tutti-color-light">  
+	  <p><b>{{message.user}}</b> tthhe manda a deciiiir:</p>
+	  <p><span class="assertive">"{{message.mainMessage}}"</span></p>
+	  <img ng-click="cardsModal.show()" class="half-image-dash" ng-src="{{hS.mainImg}}">
+	 
+  </div>
+	
+ </div>
+	  
+	     
+	<label class="item item-input">
+    <input ng-model="message.user"type="text" placeholder="De farthe de..">
+  </label>
+	
+	</label>
+	  <label class="item">
+    <textarea ng-model="message.mainMessage" placeholder="Mensaje a Tutti"></textarea>
+ </label>
+	  <div class="padding">
+	  	<button class="button button-block button-royal" ng-click="send()" ng-disabled="!message.user || !message.mainMessage">
+	  	Lulificar y Enviaaarrr
+  		</button>
+	  </div>
+
+  </ion-content>
+</ion-view>
