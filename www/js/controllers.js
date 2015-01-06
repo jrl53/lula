@@ -1,34 +1,48 @@
 angular.module('lulaApp.controllers', [])
 
-.controller('CompCtrl', function($scope, $ionicModal, $state, fbURL, HelperService) {
+.controller('CompCtrl', function($scope, $ionicModal, $state, fbURL, HelperService, lulifyFilter) {
 	var fb = new Firebase(fbURL);
 	$scope.hS = HelperService;
-	
+	$scope.isLulified = false;
 	$scope.message = {
 		timeString : new Date().toLocaleString(),
 	};
 	
 	$scope.hS.mainImg = '../img/default.png'
-
+	
+	$scope.lulify = function (){
+		$scope.message.mainMessage2 = $scope.message.mainMessage;
+		$scope.message.mainMessage = lulifyFilter($scope.message.mainMessage);
+		
+		$scope.message.user2 = $scope.message.user;
+		$scope.message.user = lulifyFilter($scope.message.user);
+		
+		$scope.isLulified = true;
+	};
+	
 	$scope.send = function(){
 		var now = new Date();
 		$scope.message = {
 			time : now.getTime(),
 			timeString : now.toLocaleString(),
 			mainMessage : $scope.message.mainMessage,
+			mainMessage2 : $scope.message.mainMessage2,
 			user : $scope.message.user,
+			user2 : $scope.message.user2,
 			mainImg : $scope.hS.mainImg == '../img/default.png' ? 'none' : $scope.hS.mainImg
 		};
 		fb.child("messages").push($scope.message);
-		clear();
+		$scope.clear();
+		$state.go('tab.wall');
 	};
 	
-	function clear(){
+	$scope.clear = function(){
 		$scope.message = {
 		timeString : new Date().toLocaleString()
 		};
-		$scope.hS.mainImg = '../img/default.png'
-		$state.go('tab.wall');
+		$scope.hS.mainImg = '../img/default.png';
+		$scope.isLulified = false;
+		
 	};
 	
 	 $ionicModal.fromTemplateUrl('templates/swipecards.html', function($ionicModal) {
@@ -85,5 +99,24 @@ angular.module('lulaApp.controllers', [])
 	$scope.goAway = function() {
     var card = $ionicSwipeCardDelegate.getSwipebleCard($scope);
     card.swipe();
+  };
+})
+
+.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
+ 
+  // Called to navigate to the main app
+  $scope.startApp = function() {
+    $state.go('main');
+  };
+  $scope.next = function() {
+    $ionicSlideBoxDelegate.next();
+  };
+  $scope.previous = function() {
+    $ionicSlideBoxDelegate.previous();
+  };
+
+  // Called each time the slide changes
+  $scope.slideChanged = function(index) {
+    $scope.slideIndex = index;
   };
 })

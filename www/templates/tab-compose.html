@@ -1,6 +1,6 @@
 <ion-view view-title="Nuevo Mensaje">
   <ion-content>
-    
+    <div class="list padding">
 	  <label class="item item-input">
     <input ng-model="message.user"type="text" placeholder="De farthe de..">
   </label>
@@ -9,7 +9,8 @@
 	  <label class="item">
     <textarea ng-model="message.mainMessage" placeholder="Mensaje a Tutti"></textarea>
  </label>
-	  
+	</div>
+	
 	  <div class="list card">
 
   <div class="item item-avatar tutti-color">
@@ -30,9 +31,22 @@
 	     
 	
 	  <div class="padding">
-	  	<button class="button button-block button-royal" ng-click="send()" ng-disabled="!message.user || !message.mainMessage">
-	  	Lulificar y Enviaaarrr
-  		</button>
+		  <div class="row" ng-if="!isLulified">
+	  	<button class="col button button-block button-positive" ng-click="lulify()" ng-disabled="!message.user || !message.mainMessage" >
+	  	Lulificar
+			  </button>
+		  </div>
+		  
+		  <div class="row" ng-if="isLulified">
+			  <button class="col button button-block button-stable" ng-click="clear()" ng-disabled="!message.user || !message.mainMessage" >
+				Borrar
+				</button>
+			  <button class="col-75 button button-block button-royal" ng-click="send()" ng-disabled="!message.user || !message.mainMessage" >
+				Enviarrrr
+				</button>
+			   
+		  </div>
+		  
 	  </div>
 
   </ion-content>
