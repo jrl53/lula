@@ -1,9 +1,19 @@
 <ion-view view-title="Nuevo Mensaje">
   <ion-content>
-    <div class="list card">
+    
+	  <label class="item item-input">
+    <input ng-model="message.user"type="text" placeholder="De farthe de..">
+  </label>
+	
+	</label>
+	  <label class="item">
+    <textarea ng-model="message.mainMessage" placeholder="Mensaje a Tutti"></textarea>
+ </label>
+	  
+	  <div class="list card">
 
   <div class="item item-avatar tutti-color">
-    <img src="../img/salchi%20(16).jpg">
+    <img src="../img/salchi(16).jpg">
     <h2>Lula Maria</h2>
     <p>{{message.timeString}}</p>
   </div>
@@ -18,14 +28,7 @@
  </div>
 	  
 	     
-	<label class="item item-input">
-    <input ng-model="message.user"type="text" placeholder="De farthe de..">
-  </label>
 	
-	</label>
-	  <label class="item">
-    <textarea ng-model="message.mainMessage" placeholder="Mensaje a Tutti"></textarea>
- </label>
 	  <div class="padding">
 	  	<button class="button button-block button-royal" ng-click="send()" ng-disabled="!message.user || !message.mainMessage">
 	  	Lulificar y Enviaaarrr

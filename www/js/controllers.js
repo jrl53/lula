@@ -17,7 +17,7 @@ angular.module('lulaApp.controllers', [])
 			timeString : now.toLocaleString(),
 			mainMessage : $scope.message.mainMessage,
 			user : $scope.message.user,
-			mainImg : $scope.hS.mainImg
+			mainImg : $scope.hS.mainImg == '../img/default.png' ? 'none' : $scope.hS.mainImg
 		};
 		fb.child("messages").push($scope.message);
 		clear();
@@ -53,7 +53,7 @@ angular.module('lulaApp.controllers', [])
   var cardTypes = [];
 	
   for(i=0; i<17; i++)
-	  cardTypes.push({ title: 'Soy un salchi', image: '../img/salchi ('+ i +').jpg' });
+	  cardTypes.push({ title: 'Soy un salchi', image: '../img/salchi('+ i +').jpg' });
  
 
 
